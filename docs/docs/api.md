@@ -107,14 +107,14 @@ cov_coefficients: 系数协方差矩阵（可选）
 
 - `F_p_value`: F检验p值
 
-### `toptable(fit, coef=1, number=10, adjust_method="BH", **kwargs)`
+### `toptable(fit, coef=[0], number=10, adjust_method="BH", **kwargs)`
 
 从线性模型拟合中提取排名靠前的基因表。
 
 **参数：**
 - `fit`: 通常来自eBayes的线性模型拟合结果字典
 
-- `coef`: 要显示的系数，可以是列索引或索引列表
+- `coef`: 要显示的系数，可以是列索引或索引列表,这里和r存在差异，如果想显示最前列的系数在r中写做coef = 1，而在此库中写做coef = [0]
 
 - `number`: 要显示的顶级基因数量，默认10
 

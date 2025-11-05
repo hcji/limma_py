@@ -1,4 +1,4 @@
-# limma-py
+# limma_py
 
 一个基础的Python版limma实现，用于基因表达数据的差异表达分析。
 
