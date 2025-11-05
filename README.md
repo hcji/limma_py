@@ -127,9 +127,6 @@ For detailed documentation, examples, and API reference, visit our [documentatio
 - scipy >= 1.4.0
 - statsmodels >= 0.11.0
 
-## Contributing
-
-Contributions are welcome! Please feel free to submit pull requests, report bugs, or suggest new features.
 
 ## License
 
