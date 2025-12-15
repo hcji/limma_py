@@ -22,7 +22,7 @@ repository: https://github.com/hcji/limma_py
 
 # Summary
 
-`limma_py` is a Python-native implementation of the core statistical framework of **limma**, a widely used method for differential expression and differential abundance analysis based on linear models with empirical Bayes variance moderation. Originally developed for microarray-based transcriptomics, limma has demonstrated broad applicability across high-dimensional omics datasets, including RNA-seq, quantitative proteomics, metabolomics, and protein stability profiling.
+`limma_py` is a Python-native implementation of the core statistical framework of **limma**, a widely used method for differential expression and differential abundance analysis based on linear models with empirical Bayes variance moderation. Originally developed for microarray-based transcriptomics, limma has proven broadly applicable across high-dimensional omics data, including RNA-seq, quantitative proteomics, metabolomics, and protein stability profiling.
 
 `limma_py` reproduces results consistent with the original R implementation of limma while enabling fully Python-based analytical workflows. The package accepts standard Python data structures such as `pandas.DataFrame` and `numpy.ndarray`, and returns results in `DataFrame` format, facilitating seamless integration with downstream data analysis, visualization, and machine learning pipelines.
 
@@ -82,6 +82,15 @@ eb_python = limma_py.eBayes(fit_python)
 # Extract differential expression analysis result table
 res = limma_py.toptable(eb_python)
 ```
+
+# Validation on protein thermal stability datasets
+
+To validate the correctness and practical applicability of `limma_py`, we compared its results with those obtained using the original R implementation of limma on four protein thermal stability datasets derived from the ProSAP study. These datasets include comparisons between control samples treated with dimethyl sulfoxide (DMSO) and drug-treated samples exposed to either 5-fluorouracil (5FU) or methotrexate (MTX), measured in two experimental contexts: intact cells and cell lysates.
+
+For each dataset, we evaluated differential protein abundance using identical experimental designs and contrast specifications, focusing on two aspects: statistical consistency and computational behavior. As shown in Figure 1, `limma_py` reproduces the results of R limma with numerical equivalence. Log fold change estimates and p-values are identical across all tested datasets, with all data points aligning precisely along the diagonal. This demonstrates that `limma_py` faithfully reproduces the statistical behavior of the original limma framework when applied to protein thermal stability data.
+
+We further assessed computational performance by comparing the execution time of individual analysis steps. Overall runtimes of `limma_py` were comparable to those of R limma, with modest differences observed across specific functions. In particular, the linear model fitting step (`lmFit`) exhibited faster execution in Python, while empirical Bayes moderation (`eBayes`) showed similar performance between implementations. The result extraction step (`topTable`) was comparatively slower in Python. These results indicate that `limma_py` provides computational performance suitable for practical use in proteomics workflows while maintaining full statistical equivalence with the R implementation (Figure 2).
+
 
 # Code availability
 
