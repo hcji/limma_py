@@ -7,7 +7,6 @@ tags:
   - differential expression
 authors:
   - name: Xian Zhang
-    orcid: 0000-0002-7470-9261
     affiliation: "1"
   - name: Hongchao Ji
     orcid: 0000-0002-7364-0741
