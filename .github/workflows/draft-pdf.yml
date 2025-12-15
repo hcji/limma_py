@@ -3,10 +3,10 @@ name: JossPaperCompilation
 on:
   push:
     paths:
-      - papers/**
+      - paper/**
   pull_request:
     paths:
-    - 'papers/**'
+    - 'paper/**'
   workflow_dispatch:
 jobs:
   paper:
@@ -28,4 +28,4 @@ jobs:
           # This is the output path where Pandoc will write the compiled
           # PDF. Note, this should be the same directory as the input
           # paper.md
-          path: papers/paper.pdf
+          path: paper/paper.pdf
