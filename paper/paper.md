@@ -88,8 +88,10 @@ res = limma_py.toptable(eb_python)
 To validate the correctness and practical applicability of `limma_py`, we compared its results with those obtained using the original R implementation of limma on four protein thermal stability datasets derived from the ProSAP study. These datasets include comparisons between control samples treated with dimethyl sulfoxide (DMSO) and drug-treated samples exposed to either 5-fluorouracil (5FU) or methotrexate (MTX), measured in two experimental contexts: intact cells and cell lysates.
 
 For each dataset, we evaluated differential protein abundance using identical experimental designs and contrast specifications, focusing on two aspects: statistical consistency and computational behavior. As shown in Figure 1, `limma_py` reproduces the results of R limma with numerical equivalence. Log fold change estimates and p-values are identical across all tested datasets, with all data points aligning precisely along the diagonal. This demonstrates that `limma_py` faithfully reproduces the statistical behavior of the original limma framework when applied to protein thermal stability data.
+<img width="3000" height="3992" alt="fig_1" src="https://github.com/user-attachments/assets/b6801a83-ddd3-432a-955c-2cf47067b156" />
 
 We further assessed computational performance by comparing the execution time of individual analysis steps. Overall runtimes of `limma_py` were comparable to those of R limma, with modest differences observed across specific functions. In particular, the linear model fitting step (`lmFit`) exhibited faster execution in Python, while empirical Bayes moderation (`eBayes`) showed similar performance between implementations. The result extraction step (`topTable`) was comparatively slower in Python. These results indicate that `limma_py` provides computational performance suitable for practical use in proteomics workflows while maintaining full statistical equivalence with the R implementation (Figure 2).
+<img width="3600" height="4800" alt="fig_2" src="https://github.com/user-attachments/assets/a6dc9976-97fb-4353-9343-0cb0d471e10a" />
 
 
 # Code availability
