@@ -89,11 +89,11 @@ To validate the correctness and practical applicability of `limma_py`, we compar
 
 For each dataset, we evaluated differential protein abundance using identical experimental designs and contrast specifications, focusing on two aspects: statistical consistency and computational behavior. As shown in Figure 1, `limma_py` reproduces the results of R limma with numerical equivalence. Log fold change estimates and p-values are identical across all tested datasets, with all data points aligning precisely along the diagonal. This demonstrates that `limma_py` faithfully reproduces the statistical behavior of the original limma framework when applied to protein thermal stability data.
 
-![Figure 1. Statistical consistency between `limma_py` and R limma on protein thermal stability datasets.(A) Comparison of log fold change estimates. (B) Comparison of p-values. Each point represents a protein, with values from `limma_py` plotted against those from R limma.](paper/fig1.png)
+![Statistical consistency between `limma_py` and R limma on protein thermal stability datasets.(A) Comparison of log fold change estimates. (B) Comparison of p-values. Each point represents a protein, with values from `limma_py` plotted against those from R limma.](fig_1.png)
 
 We further assessed computational performance by comparing the execution time of individual analysis steps. Overall runtimes of `limma_py` were comparable to those of R limma, with modest differences observed across specific functions. In particular, the linear model fitting step (`lmFit`) exhibited faster execution in Python, while empirical Bayes moderation (`eBayes`) showed similar performance between implementations. The result extraction step (`topTable`) was comparatively slower in Python. These results indicate that `limma_py` provides computational performance suitable for practical use in proteomics workflows while maintaining full statistical equivalence with the R implementation (Figure 2).
 
-![Figure 2. Computational performance comparison between `limma_py` and R limma. (A) Execution time by analysis step. (B) Overall runtime comparison across datasets.](paper/fig2.png)
+![Computational performance comparison between `limma_py` and R limma. (A) Execution time by analysis step. (B) Overall runtime comparison across datasets.](fig_2.png)
 
 # Code availability
 
